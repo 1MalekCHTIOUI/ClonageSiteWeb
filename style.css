@@ -84,18 +84,18 @@ ul li a {
   width: 50%;
 }
 /* l'image a une largeur et une hauteur de 100 % avec cover le scale*/
-.right div img {
+.image-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 /* le conteneur d'image et nom d'image a un padding et une ombre */
-.right div {
+.image-card {
   padding: 4px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 /* styles */
-.right div p {
+.image-card p {
   color: rgb(68, 68, 68);
   font-size: 14px;
 }
@@ -162,6 +162,28 @@ ul li a {
 .card-2 h1,
 .card-3 h1 {
   color: rgb(58, 58, 58);
+}
+
+/* les bouttons de carousel */
+
+.dots {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.dots > * {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 0.4rem;
+  background-color: gray;
+  cursor: pointer;
+}
+.active-dot {
+  background-color: rgb(39, 39, 39);
 }
 
 /* Media queries s'appliquent aux écrans inférieurs à 850px */
