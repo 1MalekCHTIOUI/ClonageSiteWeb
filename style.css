@@ -1,0 +1,207 @@
+/* font de document */
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+/* un conteneur d'une largeur maximale de 80 % et placé au centre*/
+.pageContainer {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+/* flex row nav avec un alignement vertical centré et un espacement entre les éléments */
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  font-weight: bold;
+}
+/* les styles des liste de links, centré et avec retour à la ligne */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+}
+/*  direction horizontal*/
+ul li {
+  text-align: center;
+  display: inline;
+  padding: 10px;
+}
+ul li a {
+  text-decoration: none;
+  color: rgb(32, 88, 243);
+  font-size: 14px;
+  padding: 0.3rem;
+}
+
+/* styles pour le boutton active */
+.active {
+  padding: 0.7rem;
+  background-color: rgb(32, 88, 243);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  text-transform: uppercase;
+}
+/* dimension du logo */
+.logo img {
+  width: 200px;
+  height: fit-content;
+}
+/* Espacement horizontal entre les éléments, centré verticalement avec un padding et margin top */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  background-color: rgb(245, 245, 245);
+  padding: 20px;
+  border-radius: 5px;
+  height: fit-content;
+  margin-top: 3rem;
+}
+/* Styles de texte */
+.header h1 {
+  color: rgb(51, 51, 51);
+  font-size: 45px;
+}
+.header p {
+  color: rgb(51, 51, 51);
+  font-size: 18px;
+}
+/*** le deuxième élément de la classe header ***/
+/* une largeur de 50 %. */
+.right {
+  width: 50%;
+}
+/* l'image a une largeur et une hauteur de 100 % avec cover le scale*/
+.right div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* le conteneur d'image et nom d'image a un padding et une ombre */
+.right div {
+  padding: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+}
+/* styles */
+.right div p {
+  color: rgb(68, 68, 68);
+  font-size: 14px;
+}
+/*** le premier élément de la classe header ***/
+/* une largeur de 40 % et hauteur de 100% */
+.left {
+  width: 40%;
+  height: 100%;
+}
+
+.left h1 {
+  color: rgb(68, 67, 67);
+}
+/* largeur et hauteur dynamique en fonction du contenu interne, une marge, padding et du texte en majuscules */
+.button_wrapper button {
+  width: fit-content;
+  height: fit-content;
+  margin-right: 0.5rem;
+  padding: 1rem;
+
+  background-color: rgb(32, 88, 243);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  text-transform: uppercase;
+}
+/* Enlever les styles de liens et hériter la couleur du parent */
+.button_wrapper button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Le conteneur de cartes a une largeur de 100 %, la hauteur dépend du contenu interne, flex row avec des éléments placés uniformément les uns entre les autres.  */
+
+.card_wrapper {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* le contenu des cartes à un flex verticale et centré */
+.card-1,
+.card-2,
+.card-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem;
+}
+/* styles d'image de cartes */
+.card-1 img,
+.card-2 img,
+.card-3 img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  border-radius: 5px;
+}
+/* styles de text de cartes */
+.card-1 h1,
+.card-2 h1,
+.card-3 h1 {
+  color: rgb(58, 58, 58);
+}
+
+/* Media queries s'appliquent aux écrans inférieurs à 850px */
+@media screen and (max-width: 850px) {
+  /*le conteneur de la page prend 100 % de la largeur et un padding de 2rem  */
+  .pageContainer {
+    max-width: 100%;
+    padding: 2rem;
+  }
+  /* le nav devient flex verticalement*/
+  nav {
+    flex-direction: column;
+  }
+  /* les éléments du nav ont une marge de 0.5rem */
+  nav > * {
+    margin: 0.5rem;
+  }
+  /* le ul devient flex verticalement*/
+  ul {
+    flex-direction: column;
+  }
+  /* les éléments du ul est centré et avec une margin bottom 10px */
+  ul li {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  /* le header devient flex verticalement*/
+  .header {
+    margin-top: 2rem;
+    flex-direction: column;
+  }
+  /* le premier et deuxiéme élément du header prend 100 % de la largeur et margin top de 2rem */
+  .right,
+  .left {
+    width: 100%;
+    margin-top: 2rem;
+  }
+  /* le conteneur de cartes devient flex verticalement*/
+  .card_wrapper {
+    flex-direction: column;
+  }
+}
